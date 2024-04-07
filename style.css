@@ -1,0 +1,43 @@
+body {
+    background-color: rgba(255, 161, 161, 0.49);
+    transition: background-color 1s ease-in;
+}
+
+#Heading {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#centreer {
+   text-align: center;
+    align: center;
+}
+
+#button1 {
+    float: left;
+    width: 100px;
+    height: 30px;
+    background-color: #a6ff90;
+    font-size: 1em;
+    transition: height 0.5s ease-in, width 0.5s ease-in, font-size 0.5s ease-in, visibility 0.5s ease-in;
+    border-radius: 25px;
+
+}
+
+#button2 {
+    float: right;
+    width: 100px;
+    height: 30px;
+    margin-left: 2em;
+    background-color: rgba(255, 90, 90, 0.73);
+    font-size: 1em;
+    transition: visibility 0.5s ease-in;
+    border-radius: 25px;
+    position: relative;
+
+}

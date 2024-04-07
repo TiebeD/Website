@@ -1,0 +1,85 @@
+const Heading = document.getElementById("Heading");
+const button1 = document.getElementById("button1");
+const button2 = document.getElementById("button2");
+const body = document.querySelector("body");
+const img = document.querySelector("img");
+var height = 50;
+var width = 120;
+var fontsize = 1.9;
+const Array = [
+  "Why?",
+  "Plss",
+  "Press yes",
+  "Thats mean",
+  "I love you",
+  "Wrong button",
+  "Press again",
+  "Ok",
+  "I love you",
+  "System.Error.outputLog(69)",
+  "U sure?",
+  "Last try",
+  "IM SERIOUS",
+]; //add some more values
+var count = 0;
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+button2.addEventListener("mouseenter", function () {
+  body.style.backgroundColor = "rgb(255,0,0)";
+});
+
+button2.addEventListener("mouseleave", function () {
+  body.style.backgroundColor = "rgb(255,161,161)";
+});
+
+button1.addEventListener("mouseenter", function () {
+  body.style.backgroundColor = "rgb(166,255,144)";
+});
+button1.addEventListener("mouseleave", function () {
+  body.style.backgroundColor = "rgb(255,161,161)";
+});
+
+button2.addEventListener("click", async function () {
+  button1.style.height = height + "px";
+  button1.style.width = width + "px";
+  button1.style.fontSize = fontsize + "em";
+  height = height + 100;
+  width = width + 100;
+  fontsize = fontsize + 1.5;
+  count = count + 1;
+  //When the button is pressed the value should be changes by the next value in the array
+  button2.value = Array[count];
+
+  if (count >= Array.length - 1) {
+    button2.style = "visibility:hidden";
+    button1.style = "visibility:hidden";
+    img.src = "sad.gif";
+    img.style = "border-radius:20px";
+    body.style.backgroundColor = "rgb(185,255,241)";
+    await sleep(10000);
+    body.style.backgroundColor = "rgb(255,161,161)";
+    img.src = "giphy.gif";
+    button1.style = "visibility:visible";
+    button2.style = "visibility:visible";
+    height = 50;
+    width = 120;
+    fontsize = 1.9;
+    count = 0;
+  }
+});
+
+button1.addEventListener("click", async function () {
+  button2.style = "visibility:hidden";
+  button1.style = "visibility:hidden";
+  img.src = "love.gif";
+  img.style = "border-radius:20px";
+  await sleep(10000);
+  img.src = "giphy.gif";
+  button1.style = "visibility:visible";
+  button2.style = "visibility:visible";
+  height = 50;
+  width = 120;
+  fontsize = 1.9;
+});
